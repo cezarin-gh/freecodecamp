@@ -1,11 +1,13 @@
 ---
 import CertificationSection from "../components/CertificationSection.astro";
+import HeaderInfo from "../components/HeaderInfo.astro";
 import SVG from "../images/fcc_primary_small.svg";
 import Layout from "../layouts/Layout.astro";
 ---
 <Layout title="Cezarin | freeCodeCamp">
     <main>
         <img class="logo" src={SVG} />
+        <HeaderInfo title="Cezarin's freeCodeCamp" />
         <CertificationSection title="Responsive Web Design" />
     </main>
 </Layout>

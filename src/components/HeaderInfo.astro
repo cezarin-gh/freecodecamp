@@ -1,0 +1,39 @@
+---
+const { title } = Astro.props;
+const paragraph = "This is a small repo to take note of my progress on the freeCodeCamp curriculum (it's like the 3rd time I do it, it's fun).\n\n Check my progress out:"
+---
+<section class="about">
+    <h1 class="about-title">{title}</h1>
+    <p class="about-paragraph">{paragraph}</p>
+</section>
+
+<style lang="scss">
+    .about {
+        width: 38rem;
+    }
+
+    .about-title {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: space-between;
+        width: 38rem;
+        font-weight: 700;
+
+        &::after {
+            content: "";
+            display: inline-block;
+            margin: 0.4rem;
+            background: white;
+            border-radius: 0.2rem;
+            width: 20rem;
+            height: 0.2rem;
+        }
+    }
+
+    .about-paragraph {
+        width: 37.5rem;
+        white-space: pre-line;
+        text-align: justify;
+    }
+</style>

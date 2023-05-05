@@ -4,7 +4,6 @@ const { title } = Astro.props;
 
 <div class="cert-section">
     <h3 class="cert-section-header">{title}</h3>
-    <div class="spacer" />
 </div>
 
 <style lang="scss">
@@ -15,13 +14,20 @@ const { title } = Astro.props;
     }
 
     .cert-section-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         font-weight: 400;
         font-size: 1.17rem;
-    }
 
-    .spacer {
-        width: 5rem;
-        height: 0.1rem;
-        background: white;
+        &::after {
+            content: "";
+            display: block;
+            margin: 0.8rem;
+            border-radius: 0.2rem;
+            width: 5rem;
+            height: 0.2rem;
+            background: white;
+        }
     }
 </style>
