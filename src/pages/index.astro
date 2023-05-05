@@ -1,0 +1,27 @@
+---
+import CertificationSection from "../components/CertificationSection.astro";
+import SVG from "../images/fcc_primary_small.svg";
+import Layout from "../layouts/Layout.astro";
+---
+<Layout title="Cezarin | freeCodeCamp">
+    <main>
+        <img class="logo" src={SVG} />
+        <CertificationSection title="Responsive Web Design" />
+    </main>
+</Layout>
+
+<style lang="scss">
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo {
+        --logo-size: 6rem;
+
+        width: var(--logo-size);
+        height: var(--logo-size);
+    }
+</style>
