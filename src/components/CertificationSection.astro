@@ -1,9 +1,16 @@
 ---
-const { title } = Astro.props;
+const { title, projects } = Astro.props;
 ---
 
 <div class="cert-section">
     <h3 class="cert-section-header">{title}</h3>
+    {projects.slice(0,).map((proj) => (
+        <p class="cert-section-project">
+            <a href={proj.url}>
+                {proj.url.split("/")[3].split("_").map((word) => (word.charAt(0).toUpperCase() + word.slice(1,))).join(" ")}
+            </a>
+        </p>
+    ))}
 </div>
 
 <style lang="scss">
@@ -11,6 +18,7 @@ const { title } = Astro.props;
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin: 1.5rem;
     }
 
     .cert-section-header {
@@ -19,6 +27,7 @@ const { title } = Astro.props;
         align-items: center;
         font-weight: 400;
         font-size: 1.17rem;
+        margin: 0;
 
         &::after {
             content: "";
@@ -29,5 +38,9 @@ const { title } = Astro.props;
             height: 0.2rem;
             background: white;
         }
+    }
+
+    .cert-section-project {
+        margin: 0;
     }
 </style>

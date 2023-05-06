@@ -3,12 +3,16 @@ import CertificationSection from "../components/CertificationSection.astro";
 import HeaderInfo from "../components/HeaderInfo.astro";
 import SVG from "../images/fcc_primary_small.svg";
 import Layout from "../layouts/Layout.astro";
+
+const responsiveWebDesign = await Astro.glob("./fcc/responsiveWebDesign/**/*.astro");
+const projectEuler = await Astro.glob("./fcc/project_euler/**/*.astro");
 ---
 <Layout title="Cezarin | freeCodeCamp">
     <main>
         <img class="logo" src={SVG} />
         <HeaderInfo title="Cezarin's freeCodeCamp" />
-        <CertificationSection title="Responsive Web Design" />
+        <CertificationSection title="Responsive Web Design" projects={responsiveWebDesign}/>
+        <CertificationSection title="Project Euler" projects={projectEuler}/>
     </main>
 </Layout>
 
